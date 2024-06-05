@@ -1,4 +1,4 @@
-EXP-1 gcd
+EXP-1 GCD
 
 num1=int(input("Enter the first number:-"))
 num2=int(input("Enter the second number:-"))
@@ -6,8 +6,10 @@ num2=int(input("Enter the second number:-"))
 while num2!=0:
     (num1,num2)=(num2,num1%num2)
 print("The GCD of the given two numbers are ",num1)
-___________________________________________________________________
-EXP-2 square root
+
+==================================================================
+
+EXP-2 square root of a number
 
 num=int(input("Enter the number "))
 approx=(num/2)
@@ -16,8 +18,10 @@ for i in range(10):
     approx=result
 
 print("The square root of",num,"=",approx)
-__________________________________________________________________
-EXP-3 exponential
+
+=================================================================
+
+EXP-3 Exponentiation 
 
 num1=int(input("Enter the number 1:-"))
 num2=int(input("Enter the number 2:-"))
@@ -30,8 +34,9 @@ else:
     p=(1/p)
 print(num1,"raised to ",num2,"=",p)
 
-_____________________________________________________________________
-EXP-4 max of list number
+=================================================================
+
+EXP-4 maximum list of numbers
 
 n = int(input("Enter the length of the array: "))
 array = []
@@ -53,8 +58,9 @@ for i in range(n):
 print("Max 1 =", array[0])
 print("Max 2 =", array[1])
 
-_________________________________________________________________
-EXP-5 linear search & binary
+================================================================
+
+EXP-5
 
 LINEAR SEARCH
 
@@ -73,8 +79,7 @@ if(f==1):
    print("The number is found")
 else:
    print("The number is not found")
-
-           ++++++++++++++++++++++++++++
+================================================================
 
 B)BINARY SEARCH
 def binary_search(arr, low, high, x):
@@ -99,9 +104,9 @@ if result != -1:
     print("Element is present at index", result)
 else:
     print("Element is not present in the array")
+=================================================================
 
-______________________________________________________________________________
-EXP-6 selection,insertion,merg
+EXP-6
 
 SELECTION SORT
 
@@ -124,7 +129,7 @@ selectionSort(arr, size)
 print('The array after sorting in ascending order by selection sort is:')
 print(arr)
 
-   ++++++++++++++++++++++++++++++++++++++++=
+==================================================================
 
 B) INSERTION SORT 
 
@@ -148,7 +153,9 @@ insertionSort(arr, size)
 print('The array after sorting in ascending order by Insertion sort is:')
 print(arr)
 
-           ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+===================================================================
+
 
 C) MERGE SORT
 
@@ -187,9 +194,9 @@ mergeSort(array)
 print("Sorted array is:")
 print(array)
 
-_________________________________________________________________________________
+==========================================================================
 
-EXP-7 matrix operation
+EXP-7 Matrix multiplication
 
 def matrix_multiplication(matrix1, matrix2):
     result = []
@@ -227,9 +234,12 @@ for row in result:
     for col in row:
         print(col, end=" ")
     print()
-_____________________________________________________________________
 
-EXP 8 command line in arguments
+
+======================================================================
+
+
+EXP 8 command line arguments
 
 import sys
 
@@ -248,9 +258,11 @@ list_1.sort()
 
 print("Sorted list:")
 print(*list_1, sep="\n")
-______________________________________________________
 
-EXP 9 most frequent wornd in text
+=====================================================================
+
+EXP 9
+frequent word 
 
 f=open("pythonfile.txt","r") 
 x=f.read()
@@ -279,8 +291,10 @@ print("Frequency: ",count[indx])
 
 
 
-==========================================================================================================================
-EX-10 ball
+================================================================
+
+EXP 10 pygame (Bouncing ball)
+
 import pygame
 
 pygame.init()
@@ -305,43 +319,40 @@ while not done:
     pygame.display.flip()
     pygame.time.Clock().tick(60)
 pygame.quit()
-
-===========================================================================================================================
-EX-10(a) eleptical orbit
+========================================================================
+Pygame (elliptical orbits)
 
 import pygame
 
-# Initialize Pygame
+import pygame
+import math
+import sys
 pygame.init()
+screen = pygame.display.set_mode((600, 300))
+pygame.display.set_caption("Elliptical orbit")
 
-screen = pygame.display.set_mode((400, 300))
+clock = pygame.time.Clock()
 
-done = False
-
-while not done:
-    # Handle events
+while(True):
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            done = True
-
-    screen.fill((0, 0, 0))
-    pygame.draw.circle(screen, (255, 255, 255), [150, 95], 5, 3)
-    pygame.draw.circle(screen, (255, 255, 255), [135, 95], 5, 3)  # Fixed typo: [135, 95) to [135, 95]
-    pygame.draw.circle(screen, (255, 255, 255), [120, 95], 5, 3)
-    pygame.draw.circle(screen, (255, 255, 255), [105, 100], 5, 3)  # Fixed typo: [105, 100) to [105, 100]
-    pygame.draw.circle(screen, (255, 255, 255), [90, 110], 5, 3)
-    pygame.draw.circle(screen, (255, 255, 255), [85, 130], 5, 3)
-    pygame.draw.circle(screen, (255, 255, 255), [85, 150], 5, 3)
-    pygame.draw.circle(screen, (255, 255, 255), [90, 170], 5, 3)
-    pygame.draw.circle(screen, (255, 255, 255), [110, 185], 5, 3)
-    pygame.draw.circle(screen, (255, 255, 255), [140, 195], 5, 3)
-    pygame.draw.circle(screen, (255, 255, 255), [170, 195], 5, 3)
-    pygame.draw.circle(screen, (255, 255, 255), [200, 190], 5, 3)
-    pygame.draw.circle(screen, (255, 255, 255), [230, 180], 5, 3)
-    pygame.draw.circle(screen, (255, 255, 255), [250, 160], 5, 3)
-    pygame.draw.ellipse(screen, (255, 0, 0), (100, 100, 100, 70), 10)
-    
-    pygame.display.flip()
-
-pygame.quit()
+            sys.exit()
+   
+    xRadius = 250
+    yRadius = 100
+   
+    for degree in range(0,360,10):
+        x1 = int(math.cos(degree * 2 * math.pi / 360) * xRadius) + 300
+        y1 = int(math.sin(degree * 2 * math.pi / 360) * yRadius) + 150
+        screen.fill((0, 0, 0))
+        pygame.draw.circle(screen, (255, 0, 0), [300, 150], 35)
+        pygame.draw.ellipse(screen, (255, 255, 255), [50, 50, 500, 200], 1)
+        pygame.draw.circle(screen, (0, 0, 255), [x1, y1], 15)
+       
+        pygame.display.flip()
+        clock.tick(5)
 ============================================================================================================================
+
+
+
+
